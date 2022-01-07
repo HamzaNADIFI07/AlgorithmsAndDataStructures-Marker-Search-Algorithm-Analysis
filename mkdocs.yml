@@ -22,7 +22,8 @@ plugins:
           - sys.path.append('src/')
 markdown_extensions:
   - admonition
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
 
 extra_javascript:
   - https://www.fil.univ-lille.fr/~salson/portail/mathjax_conf.js
