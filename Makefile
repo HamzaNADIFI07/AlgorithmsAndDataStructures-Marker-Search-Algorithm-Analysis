@@ -1,7 +1,14 @@
 PROJECT=tp-experimentateur
 AUTHOR=FIL-ASD
+SOURCES=experience.py marker.py sorting.py
+FULL_SOURCES=$(addprefix src/, $(SOURCES))
 
-.PHONY: clean doc archive author
+define execute-command
+$(1)
+
+endef
+
+.PHONY: clean doc archive author test
 
 clean:
 	rm -f *~ */*~
@@ -19,6 +26,8 @@ archive:
 	rm -f $(PROJECT).zip
 	zip -r $(PROJECT).zip . -x "sol/*" -x "site/*" -x "*~" -x "*.pyc" -x "*.DS_Store" -x "*__MACOSX/*" -x "*__pycache__/*"
 
+test:
+	@$(foreach file, $(FULL_SOURCES), $(call execute-command,python3 $(file)))
 author:
 	sed -i -e 's/^site_name:.*/site_name: "Module $(PROJECT)"/g' mkdocs.yml
 	sed -i -e 's/^copyright:.*/copyright: "2015-2022, $(AUTHOR), Univ. Lille"/g' mkdocs.yml

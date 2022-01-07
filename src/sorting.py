@@ -95,9 +95,10 @@ def merge_sort (t,cmp):
     
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()
+    test_results = doctest.testmod()
     import marker
     import test
     t = marker.Marker.markers(100)
     print(t)
     print(merge_sort(t,test.compare))
+    exit(test_results[0])
