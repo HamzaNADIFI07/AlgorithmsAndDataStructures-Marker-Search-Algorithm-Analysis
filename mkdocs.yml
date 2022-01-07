@@ -3,6 +3,9 @@ site_author: "FIL"
 copyright: FIL
 theme:
   name: "material"
+  logo: ulille.png
+  palette:
+    primary: purple
 
 nav:
   - Rendu: index.md

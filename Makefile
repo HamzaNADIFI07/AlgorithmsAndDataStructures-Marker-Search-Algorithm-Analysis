@@ -22,9 +22,11 @@ clean:
 doc: author
 	mkdocs build
 
-archive:
-	rm -f $(PROJECT).zip
-	zip -r $(PROJECT).zip . -x "sol/*" -x "site/*" -x "*~" -x "*.pyc" -x "*.DS_Store" -x "*__MACOSX/*" -x "*__pycache__/*"
+archive: $(PROJECT).zip
+
+$(PROJECT).zip: 
+	rm -f $@
+	zip -r $@ . -x "sol/*" -x "site/*" -x "*~" -x "*.pyc" -x "*.DS_Store" -x "*__MACOSX/*" -x "*__pycache__/*" -x ".git/*"
 
 test:
 	@$(foreach file, $(FULL_SOURCES), $(call execute-command,python3 $(file)))
