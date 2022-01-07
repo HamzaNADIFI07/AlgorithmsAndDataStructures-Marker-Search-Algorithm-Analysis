@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+
 """
-:mod:`sorting` module : sorting functions module for experience assignment
+Sorting functions module for experience assignment
 
-:author: `Dpt Informatique - FST - Univ. Lille <http://portail.fil.univ-lille1.fr>`
-
-:date: 2022, january
+Note: Author
+      [Dpt Informatique - FST - Univ. Lille](http://portail.fil.univ-lille1.fr)
+      2018, january
 """
 
 import copy
@@ -12,32 +13,30 @@ import copy
 def merge (t1,t2, cmp):
     """
     Given two sorted lists, creates a fresh sorted list.
-    
-    :param t1: A list of objects
-    :type t1: list
-    :param t2: A list of objects
-    :type t1: list
-    :param cmp: A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
-    :type cmp: function
-    :return: A fresh array, sorted.
-    :rtype: array
-    
-    .. note::
-    
-       time complexity of merge is :math:`O(n_1+n_2)` with
-       :math:`n_1` and :math:`n_2` resp. the length of *t1* and *t2*
 
-    >>> def cmp (x,y): 
-    ...    if x == y:
-    ...       return 0
-    ...    elif x < y:
-    ...       return -1
-    ...    else:
-    ...       return 1
-    >>> t1 = [0,2,5,6]
-    >>> t2 = [1,3,4]
-    >>> merge(t1,t2,cmp)
-    [0, 1, 2, 3, 4, 5, 6]
+    Args:
+      t1 (list): A list of objects
+      t2 (list): A list of objects
+      cmp (function): A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
+    
+    Returns: 
+      list: A fresh list, sorted.
+    
+    Note: time complexity of merge is $O(n_1+n_2)$ with
+       $n_1$ and $n_2$ resp. the length of `t1` and `t2`
+
+    Examples:
+      >>> def cmp (x,y): 
+      ...    if x == y:
+      ...       return 0
+      ...    elif x < y:
+      ...       return -1
+      ...    else:
+      ...       return 1
+      >>> t1 = [0,2,5,6]
+      >>> t2 = [1,3,4]
+      >>> merge(t1,t2,cmp)
+      [0, 1, 2, 3, 4, 5, 6]
     """
     n1 = len(t1)
     n2 = len(t2)

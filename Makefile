@@ -1,11 +1,5 @@
 PROJECT=tp-experimentateur
 AUTHOR=FIL-ASD
-PYTHONPATH=./src
-export PYTHONPATH
-SPHINXBUILD=python3 -m sphinx
-CONFIGPATH=.
-SOURCEDOC=sourcedoc
-DOC=doc
 
 .PHONY: clean doc archive author
 
@@ -19,13 +13,13 @@ clean:
 	rm -rf .DS_Store
 
 doc: author
-	$(SPHINXBUILD) -c $(CONFIGPATH) -b html $(SOURCEDOC) $(DOC)
+	mkdocs build
 
 archive:
 	rm -f $(PROJECT).zip
-	zip -r $(PROJECT).zip . -x "sol/*" -x "$(DOC)/*" -x "*~" -x "*.pyc" -x "*.DS_Store" -x "*__MACOSX/*" -x "*__pycache__/*"
+	zip -r $(PROJECT).zip . -x "sol/*" -x "site/*" -x "*~" -x "*.pyc" -x "*.DS_Store" -x "*__MACOSX/*" -x "*__pycache__/*"
 
 author:
-	sed -i -e 's/^project =.*/project = "Module $(PROJECT)"/g' conf.py
-	sed -i -e 's/^copyright =.*/copyright = "2015-2021, $(AUTHOR), Univ. Lille"/g' conf.py
-	sed -i -e 's/^author =.*/author = "$(AUTHOR)"/g' conf.py
+	sed -i -e 's/^site_name:.*/site_name: "Module $(PROJECT)"/g' mkdocs.yml
+	sed -i -e 's/^copyright:.*/copyright: "2015-2022, $(AUTHOR), Univ. Lille"/g' mkdocs.yml
+	sed -i -e 's/^site_author:.*/site_author: "$(AUTHOR)"/g' mkdocs.yml

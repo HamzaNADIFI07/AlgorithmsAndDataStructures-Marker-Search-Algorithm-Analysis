@@ -1,0 +1,24 @@
+site_name: "TP expérimentations"
+site_author: "FIL"
+copyright: FIL
+theme:
+  name: "material"
+
+nav:
+  - Rendu: index.md
+  - Experience documentation: experience.md
+  - Marker documentation: marker.md
+  - Sorting documentation: sorting.md
+  
+plugins:
+- search
+- mkdocstrings:
+    handlers:
+      python:
+        rendering:
+          show_source: no
+        setup_commands:
+          - import sys
+          - sys.path.append('src/')
+markdown_extensions:
+  - admonition

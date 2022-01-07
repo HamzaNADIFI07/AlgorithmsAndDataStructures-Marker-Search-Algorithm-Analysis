@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """
-:mod:`test` module : test module for experiences assignment
+Test module for experiences assignment
 
-:author: `FIL - IEEA - Univ. Lille1.fr <http://portail.fil.univ-lille1.fr>`_
-
-:date: 2018, january
+Note: Author
+      [Dpt Informatique - FST - Univ. Lille](http://portail.fil.univ-lille1.fr)
+      2018, january
 """
 
 import sys
@@ -17,12 +17,12 @@ def compare (m1,m2):
     '''
     Compares two markers
 
-    :param m1: A marker 
-    :type m1: Marker
-    :param m2: Another marker
-    :type m2: Marker
-    :return: -1 if *m1 < m2*, 0 if *m1* = *m2* or 1 when *m1* > *m2*
-    :rtype: int
+    Args:
+      m1 (Marker): A marker 
+      m2 (Marker): Another marker
+    
+    Returns: 
+      int: -1 if `m1 < m2`, 0 if `m1 = m2` or 1 when `m1 > m2`
     '''
     return m1.cmp(m2)
 
@@ -32,12 +32,12 @@ def negative_markers1(markers,positive):
     Computes the list of negative markers from the list of markers and
     the list of positive markers.
 
-    :param markers: The list of markers 
-    :type markers: list of str
-    :param positive: The list of positive markers
-    :type positive: list of str
-    :return: The list of negative markers
-    :rtype: list of str
+    Args:
+      markers (list of str): The list of markers 
+      positive (list of str): The list of positive markers
+
+    Returns: 
+      list of str: The list of negative markers
     """
     negative = []
     return negative

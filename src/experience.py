@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
 """
-:mod:`experience` module : Module to manage experiences
-
-:author: `Dpt Informatique - FST - Univ. Lille <http://portail.fil.univ-lille1.fr>`
-
-:date: 2018, january
+Module to manage experiences
 
 An experience is made of a set of markers and a subset of those
 markers that have been tested positive. 
+
+Note: Author
+      [Dpt Informatique - FST - Univ. Lille](http://portail.fil.univ-lille1.fr)
+      2018, january
+
 """
 
 import random
@@ -19,14 +20,13 @@ class Experience:
 
     def __init__(self,p,m):
         """
-        Creates the results of an experience on *p* positive markers
-        among *m* markers.
+        Creates the results of an experience on `p` positive markers
+        among `m` markers.
 
-        :param p: The number of positive markers (must be less or equal 
-            than the numbers of markers in *m*)
-        :type p: int
-        :param m: The number of markers (must be greater than 0)
-        :type m: int
+        Args:
+          p (int): The number of positive markers (must be less or equal 
+                   than the numbers of markers in `m`)
+          m (int): The number of markers (must be greater than 0)
         """
         assert (p <= m)
         self.markers = marker.Marker.markers(m)
@@ -36,27 +36,29 @@ class Experience:
 
     def get_markers (self):
         """
-        :return: The markers that have been tested during the experience.
-        :rtype: Array of Marker
+        Returns:
+          Array of Marker: The markers that have been tested during the experience.
 
-        >>> e = Experience(6,10)
-        >>> m = e.get_markers()
-        >>> len(m)
-        10
-        >>> sorted([ repr(i) for i in m])
-        ['m0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9']
+        Examples:
+          >>> e = Experience(6,10)
+          >>> m = e.get_markers()
+          >>> len(m)
+          10
+          >>> sorted([ repr(i) for i in m])
+          ['m0', 'm1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9']
         """
         return self.markers
     
     def get_positive_markers (self):
         """
-        :return: The positive markers.
-        :rtype: Array of Marker
+        Returns:
+          Array of Marker: The positive markers.
 
-        >>> e = Experience(10,100)
-        >>> p = e.get_positive_markers()
-        >>> len(p)
-        10
+        Examples:
+          >>> e = Experience(10,100)
+          >>> p = e.get_positive_markers()
+          >>> len(p)
+          10
         """
         return self.experience
         
