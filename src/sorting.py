@@ -18,13 +18,15 @@ def merge (t1,t2, cmp):
       t1 (list): A list of objects
       t2 (list): A list of objects
       cmp (function): A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
+
+    Note: Complexity
+          Time complexity of merge is $O(n_1+n_2)$ with
+          $n_1$ and $n_2$ resp. the length of `t1` and `t2`
+
     
-    Returns: 
+    Returns:
       list: A fresh list, sorted.
     
-    Note: time complexity of merge is $O(n_1+n_2)$ with
-       $n_1$ and $n_2$ resp. the length of `t1` and `t2`
-
     Examples:
       >>> def cmp (x,y): 
       ...    if x == y:
@@ -62,26 +64,27 @@ def merge (t1,t2, cmp):
 
 def merge_sort (t,cmp):
     """
-    A sorting function implementing the merge sort algorithm
+    A sorting function implementing the merge sort algorithm.
     
-    :param t: A list of integers
-    :type t: list
-    :param cmp: A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
-    :type cmp: function
-    :return: A fresh list, sorted.
-    :rtype: list
+    Args:
+      t (list): A list of integers
+      cmp (function): A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
 
-    .. note::
-    
-       time complexity of merge is :math:`O(n_1+n_2)` with
-       :math:`n_1` and :math:`n_2` resp. the length of *t1* and *t2*
+    Note: Complexity
+          Time complexity of merge is $O(n_1+n_2)$ with
+          $n_1$ and $n_2$ resp. the length of `t1` and `t2`
 
-    >>> import marker
-    >>> def cmp (x,y): 
-    ...    return x.cmp(y)
-    >>> t = marker.Marker.markers(10)
-    >>> merge_sort(t,cmp)
-    [m0, m1, m2, m3, m4, m5, m6, m7, m8, m9]
+    Returns:
+      list: A fresh list, sorted.
+
+    Examples:
+      >>> import marker
+      >>> def cmp (x,y): 
+      ...    return x.cmp(y)
+      >>> t = marker.Marker.markers(10)
+      >>> merge_sort(t,cmp)
+      [m0, m1, m2, m3, m4, m5, m6, m7, m8, m9]
+
     """
     n = len(t)
     if n <= 1:
