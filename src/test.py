@@ -21,7 +21,7 @@ def compare (m1,m2):
       m1 (Marker): A marker 
       m2 (Marker): Another marker
     
-    Returns: 
+    Returns:
       int: -1 if `m1 < m2`, 0 if `m1 = m2` or 1 when `m1 > m2`
     '''
     return m1.cmp(m2)
@@ -36,7 +36,7 @@ def negative_markers1(markers,positive):
       markers (list of str): The list of markers 
       positive (list of str): The list of positive markers
 
-    Returns: 
+    Returns:
       list of str: The list of negative markers
     """
     negative = []
