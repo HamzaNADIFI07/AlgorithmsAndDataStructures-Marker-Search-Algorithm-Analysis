@@ -71,8 +71,8 @@ def merge_sort (t,cmp):
       cmp (function): A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
 
     Note: Complexity
-          Time complexity of merge is $O(n_1+n_2)$ with
-          $n_1$ and $n_2$ resp. the length of `t1` and `t2`
+          Time complexity of merge sort is $\Theta(n\log n)$ with
+          $n$ the length of `t`.
 
     Returns:
       list: A fresh list, sorted.
