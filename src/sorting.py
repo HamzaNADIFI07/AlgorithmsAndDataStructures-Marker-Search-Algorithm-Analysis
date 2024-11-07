@@ -67,7 +67,7 @@ def merge_sort (t,cmp):
     A sorting function implementing the merge sort algorithm.
     
     Args:
-      t (list): A list of integers
+      t (list): A list of elements
       cmp (function): A comparison function, returning 0 if a == b, -1 is a < b, 1 if a > b
 
     Note: Complexity

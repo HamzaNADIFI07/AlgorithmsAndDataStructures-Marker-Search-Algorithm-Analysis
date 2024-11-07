@@ -33,11 +33,11 @@ def negative_markers1(markers,positive):
     the list of positive markers.
 
     Args:
-      markers (list of str): The list of markers 
-      positive (list of str): The list of positive markers
+      markers (list of Marker): The list of markers 
+      positive (list of Marker): The list of positive markers
 
     Returns:
-      list of str: The list of negative markers
+      list of Marker: The list of negative markers
     """
     negative = []
     return negative
