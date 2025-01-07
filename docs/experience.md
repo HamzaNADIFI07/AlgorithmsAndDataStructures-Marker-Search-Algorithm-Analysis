@@ -1,3 +1,3 @@
 # Experience module
 
-::: experience
+::: src.experience
