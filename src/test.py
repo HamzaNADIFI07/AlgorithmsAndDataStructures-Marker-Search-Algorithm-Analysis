@@ -39,8 +39,20 @@ def negative_markers1(markers,positive):
     Returns:
       list of Marker: The list of negative markers
     """
+    # Liste pour stocker les marqueurs négatifs
     negative = []
+    for marker in markers:
+        # Réinitialisation de trouve pour chaque marqueur
+        trouve = False
+        for pos_marker in positive:
+            if compare(marker, pos_marker) == 0:
+                trouve = True
+                # On s'arrête dès qu'on trouve le marqueur à la liste des marqueurs positif
+                break
+        if not trouve:
+            negative.append(marker)
     return negative
+
 
 # STRATEGY 2
 def negative_markers2(markers,positive):
