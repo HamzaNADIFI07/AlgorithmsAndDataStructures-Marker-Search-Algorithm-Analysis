@@ -21,3 +21,11 @@ Donc pour chaque marqueur de markers de taille **n**, l’algorithme parcourt en
 
 Donc dans ce **pire** cas, notre algorithme aura besoin de **`n*p`** comparaisons.
 
+### Question 1.1.c
+
+Dans le **pire** des cas, aucun des marqueurs de la liste `markers` ne se trouve dans la liste `positive`. Cela implique que pour chaque marqueur `m`, nous devons parcourir toute la liste `positive` taille **p** pour pour conclure qu'il est négatif.
+
+Le nombre total de comparaisons dans ce cas est donc:
+```math
+C1(m,p) = m*p
+```
