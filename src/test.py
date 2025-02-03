@@ -13,6 +13,8 @@ import experience
 import marker
 from functools import cmp_to_key
 
+import sorting
+
 def compare (m1,m2):
     '''
     Compares two markers
@@ -58,7 +60,26 @@ def negative_markers1(markers,positive):
 def negative_markers2(markers,positive):
     negative = []
     # Trier `positive` grâce au module sorting, qui vous est fourni (pensez à l'importer)
+    positive_merged = sorting.merge_sort(positive, compare)  # Tri des positifs
+    for marker in markers:
+        debut = 0
+        fin = len(positive_merged) - 1
+        trouve = False
+        while debut <= fin:
+            milieu = (debut + fin) // 2
+            element_milieu = positive_merged[milieu]
+            if compare(element_milieu, marker) == 0:
+                trouve = True
+                break
+            elif compare(element_milieu, marker) < 0:
+                debut = milieu + 1
+            else:
+                fin = milieu - 1
+        if not trouve:
+            negative.append(marker)
     return negative
+
+
 
 # STRATEGY 3
 def negative_markers3(markers,positive):
@@ -88,6 +109,7 @@ if __name__ == "__main__":
     print("Nb. comparisons: {}".format(cpt))
 
     # test stategy 2
+    print('Strategy 2')
     cpt = 0
     print("Negative markers: {}".format(negative_markers2(markers,positive)))
     print("Nb. comparisons: {}".format(cpt))
