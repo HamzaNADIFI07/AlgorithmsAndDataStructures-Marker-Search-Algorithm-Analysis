@@ -13,17 +13,17 @@ exemple pour répondre à la question 3 de la section 2.4 vous indiquerez :
 
 ## Stratégie 1
 
-### Question 1.1.a
+### Question 1.1.a:
 Pour analyser la complexité de l'algorithme, je propose de compter le nombre de comparaisons effectuées entre les éléments de la liste des marqueurs `(markers)` et ceux de la liste des marqueurs positifs `(positive)`.
 
-### Question 1.1.b
+### Question 1.1.b:
 Oui, il existe un **pire** des cas pour cet algorithme. Il se produit lorsque tous les marqueurs de la liste markers ne se trouvent pas dans la liste `positive`.
 
-Donc pour chaque marqueur de markers de taille **n**, l’algorithme parcourt entièrement la liste positive de taille **p**.
+Donc pour chaque marqueur de markers de taille **m**, l’algorithme parcourt entièrement la liste positive de taille **p**.
 
-Donc dans ce **pire** cas, notre algorithme aura besoin de **`n*p`** comparaisons.
+Donc dans ce **pire** cas, notre algorithme aura besoin de **`m*p`** comparaisons.
 
-### Question 1.1.c
+### Question 1.1.c:
 
 Dans le **pire** des cas, aucun des marqueurs de la liste `markers` ne se trouve dans la liste `positive`. Cela implique que pour chaque marqueur `m`, nous devons parcourir toute la liste `positive` taille **p** pour pour conclure qu'il est négatif.
 
@@ -79,3 +79,51 @@ Donc notre borne supérieure **`C3(m, p)`** est :
 ```math
 C3_1(m,p) + C3_2(m,p) = C3(m,p) = O( (m+p) log (m+p) + m + p )
 ```
+## Recherche empirique des cas favorables
+
+### Question 2:
+
+#### Stratégie 1:
+
+La version où cette statégie est plus performante est quand **`m=1000`** et **`p=2`**, ce qui nous fera que **2000 comparaisons** pour 1000 marqueurs.
+
+
+#### Stratégie 2:
+La version où cette statégie est plus performante est quand **`m=100000`** et **`p=100`**, ce qui nous fera que **~7*100000 comparaisons** pour 100000 marqueurs.
+
+#### Stratégie 3:
+La version où cette statégie est plus performante est quand **`m=50000`** et **`p=50000`**, ce qui nous fera que **~6*100000 comparaisons** pour 50000 marqueurs.
+
+### Question: D'après vous à quoi peut servir cette variable ?
+Cette variable sert à reinitialiser le compteur cpt à chaque appel de fonction pour pouvoir afficher le cpt de chaque stratégie sans les cumuler
+
+## Question 6: Graphes:
+
+![test10](./images/test-10.png)
+![test20](./images/test-20.png)
+![test30](./images/test-30.png)
+![test40](./images/test-40.png)
+![test50](./images/test-50.png)
+![test60](./images/test-60.png)
+![test70](./images/test-70.png)
+![test80](./images/test-80.png)
+![test90](./images/test-90.png)
+![test100](./images/test-100.png)
+
+### Conclusion:
+
+On peut conclure que pour des petites valeurs de m, les 3 stratégies implémenter dans ce Tp ne présentent pas une grande différences, comme on peut voir dans ce premier graphe de 10 marqueurs:
+
+![test10](./images/test-10.png)
+
+Par contre une fois que le nombre de marqueurs commence a grandir, on peut clairement voir la différence d'éfficacité entre les 3 stratégies:
+
+- **`Stratégie 1`** est clairement inefficace pour de grandes valeurs de m, car le nombre de comparaisons explose.
+
+- **`Stratégie 2 et 3`** restent beaucoup plus efficaces et montrent que les approches rapporté par les deux étudiants ont bien optimisé les résultats.
+
+Comme on peut voir dans ce dernier graphe de 100 marqueurs:
+
+![test100](./images/test-100.png)
+
+On peut conclure que la **Stratégie 3** est globalement la meilleure et la plus efficace, car elle maintient un nombre de comparaisons bas par rapport au deux autres stratégie.

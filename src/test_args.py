@@ -104,35 +104,35 @@ def negative_markers3(markers, positive):
         i += 1
     return negative
 
-        
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: {} <p> <m>\n\n<p>: nombre de marqueurs positifs\n<m>: nombre de marqueurs".format(sys.argv[0]))
+    if len(sys.argv) < 2:
+        print("Usage: {} <m_max>".format(sys.argv[0]))
         sys.exit(1)
-    p = int(sys.argv[1])
-    m = int(sys.argv[2])
 
-    assert (m > 0), "The number of markers must be greater than 0"
-    assert (p <= m), "The number of positive markers must be less or equal to the number of markers"
-    
-    exp = experience.Experience(p,m)
-    markers = exp.get_markers()
-    positive = exp.get_positive_markers()
+    m_max = int(sys.argv[1])
 
-    print("Markers: {}".format(markers))
-    print("Positive markers: {}".format(positive))
-    
-    # test stategy 1
-    cpt = 0                     # D'après vous à quoi peut servir cette variable ? … Cette variable sert à reinitialiser le compteur cpt à chaque appel de fonction pour pouvoir afficher le cpt de chaque stratégie sans les cumuler
-    print("Negative markers: {}".format(negative_markers1(markers,positive)))
-    print("Nb. comparisons: {}".format(cpt))
+    with open('test-'+str(m_max)+'.dat', 'w') as f:
 
-    # test stategy 2
-    cpt = 0
-    print("Negative markers: {}".format(negative_markers2(markers,positive)))
-    print("Nb. comparisons: {}".format(cpt))
+        for m in range(1, m_max + 1):
+            p = m - 1
+            
+            exp = experience.Experience(p, m)
+            markers = exp.get_markers()
+            positive = exp.get_positive_markers()
 
-    # test stategy 3
-    cpt = 0
-    print("Negative markers: {}".format(negative_markers3(markers,positive)))
-    print("Nb. comparisons: {}".format(cpt))
+            # Test Strategy 1
+            cpt = 0
+            negative_markers1(markers, positive)
+            cpt1 = cpt
+
+            # Test Strategy 2
+            cpt = 0
+            negative_markers2(markers, positive)
+            cpt2 = cpt
+
+            # Test Strategy 3
+            cpt = 0
+            negative_markers3(markers, positive)
+            cpt3 = cpt
+
+            f.write(f"{m} {p} {cpt1} {cpt2} {cpt3}\n")
