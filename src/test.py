@@ -41,12 +41,14 @@ def negative_markers1(markers,positive):
     Returns:
       list of Marker: The list of negative markers
     """
+    global cpt
     # Liste pour stocker les marqueurs négatifs
     negative = []
     for marker in markers:
         # Réinitialisation de trouve pour chaque marqueur
         trouve = False
         for pos_marker in positive:
+            cpt+=1
             if compare(marker, pos_marker) == 0:
                 trouve = True
                 # On s'arrête dès qu'on trouve le marqueur à la liste des marqueurs positif
@@ -58,6 +60,7 @@ def negative_markers1(markers,positive):
 
 # STRATEGY 2
 def negative_markers2(markers,positive):
+    global cpt
     negative = []
     # Trier `positive` grâce au module sorting, qui vous est fourni (pensez à l'importer)
     positive_merged = sorting.merge_sort(positive, compare)  # Tri des positifs
@@ -67,6 +70,7 @@ def negative_markers2(markers,positive):
         trouve = False
         while debut <= fin:
             milieu = (debut + fin) // 2
+            cpt += 1
             element_milieu = positive_merged[milieu]
             if compare(element_milieu, marker) == 0:
                 trouve = True
@@ -83,16 +87,21 @@ def negative_markers2(markers,positive):
 
 # STRATEGY 3
 def negative_markers3(markers, positive):
+  
+    global cpt
+    
     negative = []
     ensemble = markers + positive
     ensemble_merged = sorting.merge_sort(ensemble, compare)
     
     i = 0
     while i < len(ensemble_merged):
-        if (i == 0 or compare(ensemble_merged[i], ensemble_merged[i-1]) != 0) and (i == len(ensemble_merged)-1 or compare(ensemble_merged[i], ensemble_merged[i+1]) != 0):
-            negative.append(ensemble_merged[i])
+        cpt += 1  # Comparaison avec l'élément précédent
+        if (i == 0 or compare(ensemble_merged[i], ensemble_merged[i - 1]) != 0):
+            cpt += 1  # Comparaison avec l'élément suivant
+            if (i == len(ensemble_merged) - 1 or compare(ensemble_merged[i], ensemble_merged[i + 1]) != 0):
+                negative.append(ensemble_merged[i])
         i += 1
-
     return negative
 
         

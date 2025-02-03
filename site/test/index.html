@@ -589,7 +589,9 @@ the list of positive markers.</p>
 <span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
-<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">negative_markers1</span><span class="p">(</span><span class="n">markers</span><span class="p">,</span><span class="n">positive</span><span class="p">):</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">negative_markers1</span><span class="p">(</span><span class="n">markers</span><span class="p">,</span><span class="n">positive</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Computes the list of negative markers from the list of markers and</span>
 <span class="sd">    the list of positive markers.</span>
@@ -601,12 +603,14 @@ the list of positive markers.</p>
 <span class="sd">    Returns:</span>
 <span class="sd">      list of Marker: The list of negative markers</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">cpt</span>
     <span class="c1"># Liste pour stocker les marqueurs négatifs</span>
     <span class="n">negative</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">markers</span><span class="p">:</span>
         <span class="c1"># Réinitialisation de trouve pour chaque marqueur</span>
         <span class="n">trouve</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">for</span> <span class="n">pos_marker</span> <span class="ow">in</span> <span class="n">positive</span><span class="p">:</span>
+            <span class="n">cpt</span><span class="o">+=</span><span class="mi">1</span>
             <span class="k">if</span> <span class="n">compare</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="n">pos_marker</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">trouve</span> <span class="o">=</span> <span class="kc">True</span>
                 <span class="c1"># On s&#39;arrête dès qu&#39;on trouve le marqueur à la liste des marqueurs positif</span>
