@@ -82,9 +82,19 @@ def negative_markers2(markers,positive):
 
 
 # STRATEGY 3
-def negative_markers3(markers,positive):
+def negative_markers3(markers, positive):
     negative = []
+    ensemble = markers + positive
+    ensemble_merged = sorting.merge_sort(ensemble, compare)
+    
+    i = 0
+    while i < len(ensemble_merged):
+        if (i == 0 or compare(ensemble_merged[i], ensemble_merged[i-1]) != 0) and (i == len(ensemble_merged)-1 or compare(ensemble_merged[i], ensemble_merged[i+1]) != 0):
+            negative.append(ensemble_merged[i])
+        i += 1
+
     return negative
+
         
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -109,7 +119,6 @@ if __name__ == "__main__":
     print("Nb. comparisons: {}".format(cpt))
 
     # test stategy 2
-    print('Strategy 2')
     cpt = 0
     print("Negative markers: {}".format(negative_markers2(markers,positive)))
     print("Nb. comparisons: {}".format(cpt))

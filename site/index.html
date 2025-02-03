@@ -260,7 +260,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Réponses aux questions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategie-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratégie 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie 1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -285,6 +294,69 @@
   <a href="#question-11c" class="md-nav__link">
     <span class="md-ellipsis">
       Question 1.1.c
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategie-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratégie 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2.2:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Question 2.2:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-borne-superieure-pour-le-nombre-doperations-c2m-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      La borne supérieure pour le nombre d'opérations C2(m, p):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategie-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratégie 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2.2:
     </span>
   </a>
   
@@ -405,7 +477,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Réponses aux questions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategie-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratégie 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie 1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -440,6 +521,69 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#strategie-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratégie 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2.2:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Question 2.2:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-borne-superieure-pour-le-nombre-doperations-c2m-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      La borne supérieure pour le nombre d'opérations C2(m, p):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategie-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratégie 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stratégie 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2.2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -462,6 +606,7 @@
 <p>Indiquez ici les réponses aux questions posées dans le TP. Vous
 reprendrez le numéro de la section et le numéro de la question. Par
 exemple pour répondre à la question 3 de la section 2.4 vous indiquerez :</p>
+<h2 id="strategie-1">Stratégie 1</h2>
 <h3 id="question-11a">Question 1.1.a</h3>
 <p>Pour analyser la complexité de l'algorithme, je propose de compter le nombre de comparaisons effectuées entre les éléments de la liste des marqueurs <code>(markers)</code> et ceux de la liste des marqueurs positifs <code>(positive)</code>.</p>
 <h3 id="question-11b">Question 1.1.b</h3>
@@ -472,6 +617,40 @@ exemple pour répondre à la question 3 de la section 2.4 vous indiquerez :</p>
 <p>Dans le <strong>pire</strong> des cas, aucun des marqueurs de la liste <code>markers</code> ne se trouve dans la liste <code>positive</code>. Cela implique que pour chaque marqueur <code>m</code>, nous devons parcourir toute la liste <code>positive</code> taille <strong>p</strong> pour pour conclure qu'il est négatif.</p>
 <p>Le nombre total de comparaisons dans ce cas est donc:</p>
 <pre><code class="language-math">C1(m,p) = m*p
+</code></pre>
+<h2 id="strategie-2">Stratégie 2</h2>
+<h3 id="question-22">Question 2.2:</h3>
+<p>Oui, il existe un pire cas pour cet algorithme qui se produit lorsque, tous les éléments de markers ne sont pas dans positive, obligeant ainsi la l'algrithme essayé tout les cas possibles avant de conclure qu'il es négatif.</p>
+<h5 id="la-borne-superieure-pour-le-nombre-doperations-c2m-p">La borne supérieure pour le nombre d'opérations <strong><code>C2(m, p)</code></strong>:</h5>
+<p>L'algorithme <code>negative_markers2</code> a besoin en deux étapes principales :</p>
+<ol>
+<li>
+<p>Tri de positive avec merge_sort</p>
+</li>
+<li>
+<p>Le tri a une complexité en <strong><code>O(p log p)</code></strong>.</p>
+</li>
+<li>
+<p>Recherche dichotomique pour chaque élément de markers</p>
+</li>
+</ol>
+<p>La recherche dichotomique fait <code>O(log p)</code> comparaisons par chaque élément de markers.</p>
+<p>Donc comme il y a <strong>m</strong> éléments dans markers, le coût total de cette étape est <strong><code>O(m log p)</code></strong>.</p>
+<p>Donc la borne supérieure pour le nombre d'opérations <strong><code>C2(m, p)</code></strong> est :</p>
+<pre><code class="language-math">C2(m,p)=O(p*log(p)+m*log(p))
+</code></pre>
+<h2 id="strategie-3">Stratégie 3</h2>
+<h3 id="question-22_1">Question 2.2:</h3>
+<p>Notre algorithme parcourt notre liste de markers qui a pour taille <strong><code>m+p</code></strong> (liste contenant les markers et les positifs) qu'une seul fois en à chaque élement on fait deux opérations de comparaisons une avec l'élement d'avant et une avec seul après.</p>
+<p>Ce qui sera représenté par:</p>
+<pre><code class="language-math">C3_1(m,p)=O(m+p)*2
+</code></pre>
+<p>Mais par contre le principal cout utilisé par notre algorithme c'est le cout du <strong>tri</strong>, et le pire du cas dans ce cas sera lié au opération lié à la partie du <strong>tri</strong>, et qui sera que les marqueurs et les marqueurs positifs sont triés dans l’ordre inverse par exemple quand <code>markers = [10, 8, 6, 4, 2]</code> et <code>positive = [9, 7, 5, 3, 1]</code>.</p>
+<p>Ce qui sera représenté par:</p>
+<pre><code class="language-math">C3_2(m,p)=O((m + p) log (m + p))
+</code></pre>
+<p>Donc notre borne supérieure <strong><code>C3(m, p)</code></strong> est :</p>
+<pre><code class="language-math">C3_1(m,p) + C3_2(m,p) = C3(m,p) = O( (m+p) log (m+p) + m + p )
 </code></pre>
 
 
